@@ -13,13 +13,29 @@
     <aside class="flexboxDiv">
       <section class="topOfHeader">
         <aside class="topHeaderLinks">
-          ssa
+          <p>امروز جمعه شما در عجایب جهان هستید :()</p>
+          <ul>
+            <li><a href="#">فهرست عجایب</a></li>
+            <li><a href="#">آرشیو</a></li>
+            <li><a href="#">پذیرش آگهی</a></li>
+            <li><a href="">درباره ما</a></li>
+            <li><a href="#">تماس با ما</a></li>
+          </ul>
         </aside>
 
-        <h1 class="logo">logo is here</h1>
+        <h1 class="logo"><span class="icon-logo"></span></h1>
 
         <aside class="topHeaderIcons">
-          sadsad
+          <ul>
+            <li>
+              <form class="searchForm" method="get" action="<?php bloginfo('home'); ?>/" name="search">
+                  <input type="search" placeholder="جستجو ..." class="searchInput" name="s"/>
+                  <button type="submit" class="search-submit"><span class="icon-search"></span></button>
+              </form>
+            </li>
+            <li><a href="#"><i class="icon-share2"></i> <span>شبکه‌های اجتماعی</span></a></li>
+            <li><a href="#"><i class="icon-menu"></i></a></li>
+          </ul>
         </aside>
       </section>
 

@@ -11,15 +11,12 @@
 
 //HEADER
 @color_headerLinks: #9E9E9E;
-@color_headerLinksHover: #3F51B5;  //light blue
-@color_headerLinksCat: #ef5350; // light blue
-@color_headerLinksCatHover: #01579B; // light blue 900
-@color_headerLinksCatBgHover: #B3E5FC; // light blue 50
-@color_headerCatBg: #ffebee;
-@color_headerLinsCatBorder: #ffcdd2; // light blue 100
-
-@color_headerIconsBg: #EEEEEE; // light blue 100
-@color_headerIconsbgHover: @color_headerLinksHover;
+@color_headerLinksHover: @artSecHeaderLinkHover;  //light blue
+@color_headerLinksCat: #7986CB; // light blue
+@color_headerLinksCatHover: #1A237E; // light blue 900
+@color_headerLinksCatBgHover: #C5CAE9; // light blue 50
+@color_headerCatBg: #E8EAF6;
+@color_headerLinsCatBorder: @color_headerCatBg - 10; // light blue 100
 
 @color_headerIconsBg: #EEEEEE; // light blue 100
 @color_headerIconsbgHover: @color_headerLinksHover;
@@ -136,30 +133,21 @@
 #FONTS & FONT ICONS
 \*------------------------------------*/
 @font-face {
-  font-family: Sahel;
-  src: url('../redwolf_fonts/Sahel.eot');
-  src: url('../redwolf_fonts/Sahel.eot?#iefix') format('embedded-opentype'),
-  url('../redwolf_fonts/Sahel.woff') format('woff'),
-  url('../redwolf_fonts/Sahel.ttf') format('truetype');
-  font-weight: normal;
+    font-family: 'Samim';
+    src: url('../redwolf_fonts/Samim-FD.eot');
+    src: url('../redwolf_fonts/Samim-FD.eot?#iefix') format('embedded-opentype'),
+		 url('../redwolf_fonts/Samim-FD.woff') format('woff'),
+		 url('../redwolf_fonts/Samim-FD.ttf') format('truetype');
+    font-weight: normal;
 }
 
 @font-face {
-  font-family: Sahel;
-  src: url('../redwolf_fonts/Sahel-Bold.eot');
-  src: url('../redwolf_fonts/Sahel-Bold.eot?#iefix') format('embedded-opentype'),
-  url('../redwolf_fonts/Sahel-Bold.woff') format('woff'),
-  url('../redwolf_fonts/Sahel-Bold.ttf') format('truetype');
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: Sahel;
-  src: url('../redwolf_fonts/Sahel-Black.eot');
-  src: url('../redwolf_fonts/Sahel-Black.eot?#iefix') format('embedded-opentype'),
-  url('../redwolf_fonts/Sahel-Black.woff') format('woff'),
-  url('../redwolf_fonts/Sahel-Black.ttf') format('truetype');
-  font-weight: 900;
+    font-family: 'Samim';
+    src: url('../redwolf_fonts/Samim-Bold-FD.eot');
+    src: url('../redwolf_fonts/Samim-Bold-FD.eot?#iefix') format('embedded-opentype'),
+		 url('../redwolf_fonts/Samim-Bold-FD.woff') format('woff'),
+		 url('../redwolf_fonts/Samim-Bold-FD.ttf') format('truetype');
+    font-weight: bold;
 }
 
 .tXt_style_fontIcon(@content, @font_size) {
@@ -172,14 +160,14 @@
   font-size: @font_size;
   line-height: @line_style;
   word-spacing: @word_space;
-  font-family: Sahel, Arial, sans-serif;
+  font-family: Samim, Arial, sans-serif;
 }
 
 .tXt_style_bold(@line_style, @font_size, @word_space) {
   font-size: @font_size;
   line-height: @line_style;
   word-spacing: @word_space;
-  font-family: Sahel, Arial, sans-serif;
+  font-family: Samim, Arial, sans-serif;
   font-weight: bold;
 }
 
@@ -187,7 +175,7 @@
   font-size: @font_size;
   line-height: @line_style;
   word-spacing: @word_space;
-  font-family: Sahel, Arial, sans-serif;
+  font-family: Samim, Arial, sans-serif;
   font-weight: 900;
 }
 
@@ -219,21 +207,131 @@
       align-items: center;
 
       .topHeaderLinks {
-        width: 40%;
-        background: red;
+        width: 43%;
+        .displayFlex;
+        flex-direction: column;
+
+        p {
+          .tXt_style_normal(auto, 0.9em, auto);
+          margin-bottom: 8px;
+          color: @color_headerLinksCat;
+        }
+
+        ul {
+          .displayFlex;
+          flex-direction: row;
+          justify-content: flex-start;
+
+          li {
+            margin-left: 8px;
+            .tXt_style_normal(auto, 0.9em, auto);
+            float: right;
+            // background: red;
+
+            a {
+              color: @color_headerLinks;
+              .time;
+
+              &:hover {
+                color: @artSecHeaderLinkHover;
+              }
+            }
+
+            &:before {
+              content: "/";
+              color: @color_headerLinks + 50;
+              float: left;
+              cursor: default;
+              margin-right: 8px;
+            }
+
+            &:last-child:before {
+              display: none;
+            }
+          }
+        }
       }
 
       .logo {
-        width: 120px;
-        height: 60px;
-        background: green;
+        // width: 120px;
+        // height: 128px;
+        // background: green;
+        text-align: center;
+
+        span {
+          font-size: 100px;
+          color: blue;
+        }
       }
 
       .topHeaderIcons {
-        width: 40%;
-        background: red;
-      }
-    }
+        width: 43%;
+        // background: red;
+
+        ul {
+          .displayFlex;
+          // justify-content: space-between;
+          justify-content: flex-end;
+          li {
+            margin-left: 8px;
+
+            a {
+              .borderRadius;
+              .displayFlex;
+              flex-direction: row-reverse;
+              align-items: center;
+              line-height: 0!important;
+              border: 1px solid  @artSecDetailsColor;
+              padding: 8px;
+              color: @artSecDetailsColor;
+              .time;
+
+              span {
+                .tXt_style_normal(auto, 0.75em, auto);
+                margin-left: 8px;
+              }
+
+              i {
+                font-family: icomoon;
+                font-size: 20px;
+              }
+
+              &:hover {
+                color: @color_topHeader;
+                border: 1px solid  @color_headerIconsbgHover;
+                background-color: @color_headerIconsbgHover;
+              }
+            }
+
+            form {
+              position: relative;
+              .displayFlex;
+              flex-direction: row;
+              color: @artSecDetailsColor;
+              border: 1px solid  @artSecDetailsColor;
+              .borderRadius;
+              overflow: hidden;
+
+              input {
+                .tXt_style_normal(auto, 0.75em, auto);
+                padding: 8px;
+                border: none;
+              }
+
+              button {
+                border: none;
+                font-family: icomoon;
+                font-size: 20px;
+              }
+            }
+
+            &:last-child {
+              margin: 0;
+            }
+          }
+        }//end of ul
+      }//end of topHeaderIcons
+    }//end of topOfHeader
 
     //all shit of bottom header
     .btmOfHeader {
@@ -252,13 +350,13 @@
           position: relative;
 
           a {
-            .tXt_style_bold(auto, 1em, auto);
+            .tXt_style_normal(auto, 1.2em, auto);
             color: @color_headerLinks;
             .time;
             padding: 16px 0;
 
             &:hover {
-              color: @color_headerLinksHover
+              color: @artSecHeaderLinkHover;
             }
           }
 
@@ -272,15 +370,15 @@
             flex-direction: column;
             right: -100%;
             top: -8px;
+            padding: 0;
             opacity: 0;
             position: absolute;
             visibility: hidden;
             z-index: 999;
             width: 200px;
-            padding: 0;
             box-sizing: border-box;
             background: @color_headerCatBg;
-            .mdShadow2;
+            .mdShadow5;
             .time;
 
             &:before {
@@ -302,7 +400,7 @@
               padding: 15px 10px!important;
               color: @color_headerLinksCat!important;
               .time;
-              .tXt_style_normal(auto,0.8em,auto);
+              .tXt_style_normal(auto, 1.1em,auto);
               border-bottom: 1px solid @color_headerLinsCatBorder;
 
               &:hover {
@@ -386,7 +484,7 @@
         text-align: center;
 
         h3 {
-          .tXt_style_bold(auto, 1.2em, -3px);
+          .tXt_style_bold(22px, 1.1em, -2px);
           color: #FFF;
           text-shadow: 0 0 5px #000000;
           margin-bottom: 8px;
@@ -575,6 +673,7 @@
 
          &:hover {
            opacity: 0.9;
+           background-size: auto 110%;
          }
        }//end of i
      }//end of imgPart
