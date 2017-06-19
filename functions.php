@@ -3,7 +3,10 @@ function Red_Wolf()
 {
   wp_enqueue_style('mainStyle', get_stylesheet_uri());
   wp_enqueue_style('Less-Style', get_template_directory_uri() . '/style/asli.less');
+  // wp_enqueue_style('owl.carousel-Style', get_template_directory_uri() . '/style/owl.carousel.min.css');
+  // wp_enqueue_style('owl.carouse.default-Style', get_template_directory_uri() . '/style/owl.theme.default.min.css');
   wp_enqueue_script('Jquery-min', get_template_directory_uri() . '/redwolf_js/jquery.min.js');
+  // wp_enqueue_script('owl.carousel.js-min', get_template_directory_uri() . '/redwolf_js/owl.carousel.min.js');
   wp_enqueue_script('TabsLet-min', get_template_directory_uri() . '/redwolf_js/jquery.tabslet.min.js');
   wp_enqueue_script('Default-JS', get_template_directory_uri() . '/redwolf_js/redwolf.js');
 }

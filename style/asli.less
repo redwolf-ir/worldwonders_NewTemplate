@@ -7,17 +7,18 @@
 // MAIN
 @color_bodyBg: #f1f0f8;
 @color_topHeader: #FFFFFF;
+@color_mainContent: #FFFFFF;
 @lightColorForBorders: #EEEEEE;
 
 //HEADER
 @color_headerLinks: #9E9E9E;
 @color_headerLinksHover: @artSecHeaderLinkHover;  //light blue
-@color_headerLinksCat: #7986CB; // light blue
-@color_headerLinksCatHover: #1A237E; // light blue 900
-@color_headerLinksCatBgHover: #C5CAE9; // light blue 50
-@color_headerCatBg: #E8EAF6;
+@color_headerLinksCat: #9575CD; // deep purple 300
+@color_headerLinksCatHover: #4527A0; // deep purple 800
+@color_headerLinksCatBgHover: #D1C4E9; //deep purple 100
+@color_headerCatBg: #EDE7F6; //deep purple 50
 @color_headerLinsCatBorder: @color_headerCatBg - 10; // light blue 100
-
+@headerSecColorLinks: @artSecDetailsColor; //purple 300
 @color_headerIconsBg: #EEEEEE; // light blue 100
 @color_headerIconsbgHover: @color_headerLinksHover;
 
@@ -26,8 +27,8 @@
 @artSecImgLink: #f44336; // Red 500
 @artSecImgLinkHover: #FBC02D;
 @artSecHeaderLink: #424242;
-@artSecDetailsColor: #9FA8DA;
-@artSecHeaderLinkHover: #f44336;
+@artSecDetailsColor: #9575CD; //deep Purple 300
+@artSecHeaderLinkHover: #F57C00; //orange 700
 @artSecP: #616161; // Gray 700
 
 //SIDEBAR
@@ -91,11 +92,11 @@
 }
 
 .postSectionTopBgColor {
-  background: rgb(255,255,255);
-  background: -moz-linear-gradient(top, rgba(255,255,255,1) 50%, rgba(240,240,240,0.5) 100%);
-  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 50%,rgba(240,240,240,0.5) 100%);
-  background: linear-gradient(to bottom, rgba(255,255,255,1) 50%,rgba(240,240,240,0.5) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f0f0f0',GradientType=0 );
+  background: rgb(186,104,200);
+  background: -moz-linear-gradient(45deg, rgba(186,104,200,1) 0%, rgba(149,117,205,1) 100%);
+  background: -webkit-linear-gradient(45deg, rgba(186,104,200,1) 0%,rgba(149,117,205,1) 100%);
+  background: linear-gradient(45deg, rgba(186,104,200,1) 0%,rgba(149,117,205,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ba68c8', endColorstr='#9575cd',GradientType=1 );
 }
 
 .bg_gradiant_1 {
@@ -214,7 +215,7 @@
         p {
           .tXt_style_normal(auto, 0.9em, auto);
           margin-bottom: 8px;
-          color: @color_headerLinksCat;
+          color: @headerSecColorLinks;
         }
 
         ul {
@@ -260,7 +261,7 @@
 
         span {
           font-size: 100px;
-          color: blue;
+          color: black;
         }
       }
 
@@ -281,14 +282,14 @@
               flex-direction: row-reverse;
               align-items: center;
               line-height: 0!important;
-              border: 1px solid  @artSecDetailsColor;
+              border: 1px solid  @headerSecColorLinks;
               padding: 8px;
-              color: @artSecDetailsColor;
+              color: @headerSecColorLinks;
               .time;
 
               span {
-                .tXt_style_normal(auto, 0.75em, auto);
-                margin-left: 8px;
+                font-size: 0;
+                visibility: hidden;
               }
 
               i {
@@ -300,6 +301,12 @@
                 color: @color_topHeader;
                 border: 1px solid  @color_headerIconsbgHover;
                 background-color: @color_headerIconsbgHover;
+
+                span {
+                  .tXt_style_normal(auto, 0.8em, auto);
+                  visibility: visible;
+                  margin-left: 8px;
+                }
               }
             }
 
@@ -307,21 +314,37 @@
               position: relative;
               .displayFlex;
               flex-direction: row;
-              color: @artSecDetailsColor;
-              border: 1px solid  @artSecDetailsColor;
+              color: @headerSecColorLinks;
+              border: 1px solid  @headerSecColorLinks;
               .borderRadius;
               overflow: hidden;
 
               input {
-                .tXt_style_normal(auto, 0.75em, auto);
+                .tXt_style_normal(auto, 0.8em, auto);
+                width: 90px;
                 padding: 8px;
+                .time;
                 border: none;
+
+                &:focus {
+                  width: 140px;
+                  outline: none;
+                }
               }
 
               button {
                 border: none;
                 font-family: icomoon;
                 font-size: 20px;
+                color: @headerSecColorLinks;
+                background-color: transparent;
+                .time;
+                cursor: pointer;
+
+                &:hover {
+                  color: #ffffff;
+                  background: @headerSecColorLinks;
+                }
               }
             }
 
@@ -534,7 +557,7 @@
     padding: 2%;
     margin-bottom: 2%;
     box-sizing: border-box;
-    background: @color_topHeader;
+    background: @color_mainContent;
     // .mdShadow2;
     // .borderRadius;
     border: 1px solid transparent;

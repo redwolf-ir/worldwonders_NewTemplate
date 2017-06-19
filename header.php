@@ -33,8 +33,9 @@
                   <button type="submit" class="search-submit"><span class="icon-search"></span></button>
               </form>
             </li>
+            <li><a href="#"><i class="icon-fire"></i> <span>موضوعات محبوب</span></a></li>
             <li><a href="#"><i class="icon-share2"></i> <span>شبکه‌های اجتماعی</span></a></li>
-            <li><a href="#"><i class="icon-menu"></i></a></li>
+            <li><a href="#"><i class="icon-menu"></i> <span>منوی کاربری</span></a></li>
           </ul>
         </aside>
       </section>
