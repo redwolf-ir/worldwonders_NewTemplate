@@ -5,6 +5,9 @@
     <?php if ($count == 3) : ?>
     <?php include (TEMPLATEPATH . '/midleNav.php'); ?>
     <?php endif; ?>
+    <?php if ($count == 5) : ?>
+    <?php include (TEMPLATEPATH . '/midleSlider.php'); ?>
+    <?php endif; ?>
     <aside class="defaultContent">
       <div class="txtPart">
         <?php the_category('') ?>

@@ -1,6 +1,10 @@
 <div class="width">
-  <ul class="heroSlider marginTop">
-    <?php if (have_posts()) : ?><?php while (have_posts()) : the_post(); ?>
+  <ul class="heroSlider">
+    <?php
+    $my_query = new WP_Query('showposts=5&cat=1');
+    while ($my_query->have_posts()):
+    $my_query->the_post();
+    $do_not_duplicate = $post->ID; ?>
     <li>
       <i style="background-image: url(
       <?php $image_id = get_post_thumbnail_id();
@@ -15,6 +19,6 @@
       </aside>
       <a href="#"></a>
     </li>
-    <?PHP endwhile; ?><?PHP endif ?>
+    <?PHP endwhile; wp_reset_query(); ?>
   </ul>
 </div>

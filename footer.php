@@ -8,3 +8,20 @@
     <p>© کپی‌رایت: <?php echo jdate ('F Y') ; ?></p>
   </footer>
 </div>
+
+<script type="text/javascript">
+var header = document.querySelector(".header");
+var headroom = new Headroom(header, {
+  "classes": {
+    "initial": "animated",
+    "pinned": "slideDown",
+    "unpinned": "slideUp"
+  }
+});
+headroom.init();
+</script>
+
+<?php wp_footer(); ?>
+
+</body>
+</html>

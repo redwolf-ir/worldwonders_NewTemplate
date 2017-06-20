@@ -1,13 +1,9 @@
 $(document).ready(function(){
 /******************************************************/
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > 150){
-      $('header').addClass("sticky");
-    }
-    else{
-      $('header').removeClass("sticky");
-    }
-  });
+  var headrHeight = $('.header').height();
+  var toto = 20;
+  $('.marginTop').css("margin-top", headrHeight + toto + "px");
+
 /******************************************************/
   $('.tabs').tabslet({
     mouseevent: 'click',
@@ -26,14 +22,26 @@ $(document).ready(function(){
 // 		$("#"+tab_id).addClass('current');
 // 	})
 // /******************************************************/
-  $('.sidebarSection-3 li').click(function(){
-    var tugg_id = $(this).attr('tuggle');
-
-    $('.sidebarSection-3 li').removeClass('tuggle_active');
-
-    $(this).addClass('tuggle_active');
-    $("#"+tugg_id).addClass('tuggle_active');
-  })
+  // $('.sidebarSection-3 li').click(function(){
+  //   var tugg_id = $(this).attr('tuggle');
+  //
+  //   $('.sidebarSection-3 li').removeClass('tuggle_active');
+  //
+  //   $(this).addClass('tuggle_active');
+  //   $("#"+tugg_id).addClass('tuggle_active');
+  // })
+/******************************************************/
+$('.bitch').click(function(){
+  if ($(".btmOfHeader").is(":hidden")) {
+      $(".btmOfHeader").slideDown("slow");
+      $('.bitch').addClass('tuggle_active');
+      // $("i",this).toggleClass("icon-expand_less icon-expand_more");
+  } else {
+      $(".btmOfHeader").slideUp("slow");
+      $('.bitch').removeClass('tuggle_active');
+      // $("i",this).toggleClass("icon-expand_more icon-expand_less");
+  }
+})
 /******************************************************/
 // $('.artTabBtnsNext').click(function(){
 //   var artTab = $(".artTabContent").attr('artTabs');

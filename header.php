@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<header class="header">
+<header class="header header--fixed">
   <div class="width">
     <aside class="flexboxDiv">
       <section class="topOfHeader">
@@ -33,7 +33,7 @@
                   <button type="submit" class="search-submit"><span class="icon-search"></span></button>
               </form>
             </li>
-            <li><a href="#"><i class="icon-fire"></i> <span>موضوعات محبوب</span></a></li>
+            <li><a class="bitch" href="#" onclick="return false;"><i class="icon-fire"></i> <span>موضوعات محبوب</span></a></li>
             <li><a href="#"><i class="icon-share2"></i> <span>شبکه‌های اجتماعی</span></a></li>
             <li><a href="#"><i class="icon-menu"></i> <span>منوی کاربری</span></a></li>
           </ul>
