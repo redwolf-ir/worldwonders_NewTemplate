@@ -9,6 +9,35 @@
   </footer>
 </div>
 
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>عجایب جهان و دیگر رسانه‌ها</h2>
+    <p>برای مطلع شدن از بروز رسانی سایت و همچنین دریافت جدیدترین و بروزترین مقالات ما در شبکه‌های اجتماعی و خبرنامه عجایب جهان عضو شوید.</p>
+    <hr>
+    <p class="modalPtxt2">برای عضویت در خبرنامه ابتدا ایمیل خود را در فرم زیر ثبت کنید، سپس ایمیل خود را برای تایید عضویت بررسی فرمایید.</p>
+
+    <form
+        onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=7ww', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"
+        target="popupwindow" method="post" action="http://feedburner.google.com/fb/a/mailverify">
+        <span class="icon-logo"></span>
+        <input type="text" id="email" name="email" placeholder="Enter Your Email Adress ..."/>
+        <input type="hidden" name="uri" value="7ww"/>
+        <input type="hidden" value="en_US" name="loc"/>
+        <button>مشترک شوید</button>
+    </form>
+
+    <ul class="modalIcons">
+      <li><a class="btnCat" data-balloon="تولتیپ مخصوص توضیح" data-balloon-pos="up"  href="#" onclick="return false;"><i class="icon-stack"></i></a></li>
+      <li><a class="btnFav" href="#" onclick="return false;"><i class="icon-fire"></i></a></li>
+      <li><a class="btnCat"  href="#" onclick="return false;"><i class="icon-stack"></i></a></li>
+      <li><a class="btnFav" href="#" onclick="return false;"><i class="icon-fire"></i></a></li>
+      <li><a class="btnCat"  href="#" onclick="return false;"><i class="icon-stack"></i></a></li>
+      <li><a class="btnFav" href="#" onclick="return false;"><i class="icon-fire"></i></a></li>
+    </ul>
+  </div>
+</div>
+
 <script type="text/javascript">
 var header = document.querySelector(".header");
 var headroom = new Headroom(header, {

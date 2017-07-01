@@ -12,34 +12,53 @@ $(document).ready(function(){
   });
 
 /******************************************************/
-//   $('ul.tabs2 li').click(function(){
-// 		var tab_id = $(this).attr('data-tab');
-//
-// 		$('ul.tabs2 li').removeClass('btnActive');
-// 		$(".tab-content2").removeClass('current');
-//
-// 		$(this).addClass('btnActive');
-// 		$("#"+tab_id).addClass('current');
-// 	})
-// /******************************************************/
-  // $('.sidebarSection-3 li').click(function(){
-  //   var tugg_id = $(this).attr('tuggle');
-  //
-  //   $('.sidebarSection-3 li').removeClass('tuggle_active');
-  //
-  //   $(this).addClass('tuggle_active');
-  //   $("#"+tugg_id).addClass('tuggle_active');
-  // })
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("btnSoc");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 /******************************************************/
-$('.bitch').click(function(){
+$('.btnCat').click(function(){
   if ($(".btmOfHeader").is(":hidden")) {
       $(".btmOfHeader").slideDown("slow");
-      $('.bitch').addClass('tuggle_active');
-      // $("i",this).toggleClass("icon-expand_less icon-expand_more");
+      $('.btnCat').addClass('tuggle_active');
+      $('.btnFav').removeClass('tuggle_active');
+      $(".btmOfHeaderHot").slideUp("slow");
   } else {
       $(".btmOfHeader").slideUp("slow");
-      $('.bitch').removeClass('tuggle_active');
-      // $("i",this).toggleClass("icon-expand_more icon-expand_less");
+      $('.btnCat').removeClass('tuggle_active');
+  }
+})
+/******************************************************/
+$('.btnFav').click(function(){
+  if ($(".btmOfHeaderHot").is(":hidden")) {
+      $(".btmOfHeaderHot").slideDown("slow");
+      $('.btnFav').addClass('tuggle_active');
+      $(".btmOfHeader").slideUp("slow");
+      $('.btnCat').removeClass('tuggle_active');
+  } else {
+      $(".btmOfHeaderHot").slideUp("slow");
+      $('.btnFav').removeClass('tuggle_active');
   }
 })
 /******************************************************/

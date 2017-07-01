@@ -183,7 +183,6 @@
 /*------------------------------------*\
 #STYLES MAIN PAGE
 \*------------------------------------*/
-
 /************/
 //  HEADER
 /************/
@@ -192,7 +191,7 @@
   width: 100%;
   background-color: @color_topHeader;
   .mdShadow2;
-  z-index: 9999;
+  z-index: 9998;
 
   .flexboxDiv {
     padding: 16px 0;
@@ -289,6 +288,14 @@
           li {
             margin-left: 8px;
 
+            button {
+              &:hover {
+                span {
+                  font-size: 1em!important;
+                }
+              }
+            }
+
             a {
               .borderRadius;
               .displayFlex;
@@ -298,7 +305,10 @@
               border: 1px solid  @headerSecColorLinks;
               padding: 8px;
               color: @headerSecColorLinks;
+              background: transparent;
               .time;
+              outline: none;
+              cursor: pointer;
 
               span {
                 font-size: 0;
@@ -334,8 +344,8 @@
 
               input {
                 .tXt_style_normal(auto, 0.8em, auto);
-                width: 90px;
-                padding: 8px;
+                width: 80px;
+                padding: 7px;
                 .time;
                 border: none;
 
@@ -377,7 +387,7 @@
       ul {
         .displayFlex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
         padding-top: 16px;
         margin-top: 16px;
         width: 100%;
@@ -405,7 +415,7 @@
 
           .categories {
             flex-direction: column;
-            right: -100%;
+            right: -50%;
             top: -8px;
             padding: 0;
             opacity: 0;
@@ -462,6 +472,36 @@
         }//end of li
       }//end of ul
     }//end of btmOfHeader
+
+    .btmOfHeaderHot {
+      width: 100%;
+      display: none;
+
+      ul {
+        .displayFlex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 16px;
+        margin-top: 16px;
+        width: 100%;
+        border-top: 1px solid @lightColorForBorders;
+
+        li {
+          position: relative;
+
+          a {
+            .tXt_style_normal(auto, 1.2em, auto);
+            color: @color_headerLinks;
+            .time;
+            padding: 16px 0;
+
+            &:hover {
+              color: @artSecHeaderLinkHover;
+            }
+          }
+        }//end of li
+      }//end of ul
+    }//end of btmOfHeaderHot
   }
 }
 //  end of HEADER
@@ -1072,6 +1112,131 @@
    float: left !important;
    margin-left: 0 !important;
  }
+
+ /************/
+ //  MOADAL4
+ /************/
+.modal {
+  .modal-content {
+    padding: 2%;
+
+    h2 {
+      .tXt_style_bold(auto, 1.6em, -3px);
+      color: @artSecHeaderLink;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    p {
+      .tXt_style_normal(28px, 1em, auto);
+      color: @artSecP;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .modalPtxt2 {
+      color: @artSecDetailsColor;
+    }
+
+    hr {
+      border: 1px solid @artSecDetailsColor;
+    }
+
+    form {
+      box-sizing: border-box;
+      width: 100%;
+      float: left;
+      margin-top: 8px;
+      position: relative;
+      .displayFlex;
+      flex-direction: row-reverse;
+      align-items: stretch;
+      overflow: hidden;
+      .borderRadius;
+      border: 1px solid  @headerSecColorLinks;
+
+      span {
+        position: absolute;
+        left: 4px;
+        top: 8px;
+        font-family: icomoon;
+        color: @headerSecColorLinks;
+        font-size: 34px!important;
+      }
+
+      input {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-size: 1em;
+        width: 85%;
+        color: @headerSecColorLinks;
+        border: none;
+        padding: 14px 10px 14px 44px;
+        .time;
+        direction: ltr;
+
+        &:focus {
+          background-color: @color_bodyBg;
+          outline: none;
+        }
+      }
+
+      button {
+        width: 15%;
+        border: none;
+        font-family: icomoon;
+        .tXt_style_normal(auto, 0.8em, auto);
+        color: #FFFFFF;
+        background-color: @headerSecColorLinks;
+        .time;
+        cursor: pointer;
+
+        &:hover {
+          color: #ffffff;
+          background: @artSecHeaderLinkHover;
+        }
+      }
+    }
+
+    .modalIcons {
+      width: 100%;
+      margin-top: 32px;
+      float: right;
+      .displayFlex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      li {
+        margin-left: 8px;
+
+        a {
+          border: 1px solid @artSecDetailsColor;
+          color: @artSecDetailsColor;
+          font-family: icomoon;
+          font-size: 32px;
+          padding: 8px;
+          .time;
+
+          &:hover {
+            background-color: @artSecHeaderLinkHover;
+            color: #FFFFFF;
+          }
+        }
+
+        &:last-child {
+          margin-left: 0;
+        }
+      }
+    }
+
+    .close {
+      osition: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+}
 
  /************/
  //  FOOTER
