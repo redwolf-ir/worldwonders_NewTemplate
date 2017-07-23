@@ -20,7 +20,7 @@
     <form
         onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=7ww', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"
         target="popupwindow" method="post" action="http://feedburner.google.com/fb/a/mailverify">
-        <span class="icon-logo"></span>
+        <span class="icon-newspaper"></span>
         <input type="text" id="email" name="email" placeholder="Enter Your Email Adress ..."/>
         <input type="hidden" name="uri" value="7ww"/>
         <input type="hidden" value="en_US" name="loc"/>
